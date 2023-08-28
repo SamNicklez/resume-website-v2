@@ -17,17 +17,19 @@ export default {
       if(this.isDark){
         r.style.setProperty('--scrollbar-track-background','#e6e6e6')
         r.style.setProperty('--scrollbar-track-boarder-left','1px solid #dadada')
-        r.style.setProperty('--scrollbar-thumb-background','#b0b0b0')
         r.style.setProperty('--scrollbar-thumb-boarder','solid 3px #e6e6e6')
         r.style.setProperty('--scrollbar-thumb-hover-background','black')
+        r.style.setProperty('--bodytext','black')
+        r.style.setProperty('--skillsBackground','#D3D3D3')
         this.isDark = false
       }
       else{
-        r.style.setProperty('--scrollbar-track-background','#202020')
+        r.style.setProperty('--scrollbar-track-background','#1f1b24')
         r.style.setProperty('--scrollbar-track-boarder-left','1px solid #2c2c2c')
-        r.style.setProperty('--scrollbar-thumb-background','#3e3e3e')
         r.style.setProperty('--scrollbar-thumb-boarder','solid 3px #202020')
         r.style.setProperty('--scrollbar-thumb-hover-background','white')
+        r.style.setProperty('--bodytext','white')
+        r.style.setProperty('--skillsBackground','black')
         this.isDark = true
       }
     }
@@ -37,24 +39,45 @@ export default {
 
 <template>
   <div id="mainContainer">
-    <v-btn @click="colorSwitch">
-  Button
-    </v-btn>
-    Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello<br>Hello
+    <v-sheet id="mainCard">
+      <div style="margin-left:2.5vw">
+        <v-switch @click="colorSwitch" :model-value="this.isDark" color="#bb86fc" style="max-width: 10vw;" prepend-icon="mdi-white-balance-sunny" append-icon="mdi-moon-waning-crescent"></v-switch>
+      <font size="+2">Hello! My name is</font>
+      <br>
+      <font size="+4">Samuel Nicklaus</font><font color="#bb86fc" size="+4"><b>.</b></font>
+      <br>
+      <br>
+      <br>
+      <font size="+1">I am a Computer Science and Engineering major <br> from</font>
+      <font size="+1"><a href="https://www.google.com/maps/place/Iowa+City,+IA/@41.647599,-91.5407446,13z/data=!3m1!4b1!4m6!3m5!1s0x87e441c16a208817:0x6d711867870582b0!8m2!3d41.6578257!4d-91.5346169!16zL20vMHQwMTU?entry=ttu" target="_blank" style="color:#bb86fc"><b> Iowa City, Iowa</b></a></font>
+      <font size="+1"> who loves coding, hiking, & video games!</font>
+      <br>
+      <br>
+      <font size="+1">I am currently a student at the University of Iowa with an expected graduation date of 2024</font>
+      </div>
+    </v-sheet>
+    <v-sheet id="skillsCard">
+        <div style="margin-left: 2.5vh;">
+
+        </div>
+    </v-sheet>
+    
   </div>
 </template>
 
 <style>
 /* Root variables that can be changed through JS */
 :root{
-  --scrollbar-track-background: #202020;
+  --scrollbar-track-background: #1f1b24;
   --scrollbar-track-boarder-left: 1px solid #2c2c2c;
-  --scrollbar-thumb-background: #3e3e3e;
+  --scrollbar-thumb-background: #bb86fc;
   --scrollbar-thumb-boarder: solid 3px #202020;
   --scrollbar-thumb-hover-background: white;
   --header-text: white;
   --special-text: white;
   --subtext: white;
+  --bodytext: white;
+  --skillsBackground: black;
 }
 
 /* Fade in animation on loading of webpage */
@@ -76,6 +99,24 @@ export default {
   src: url('/resources/Exo-VariableFont_wght.ttf');
 }
 
+#mainCard{
+  background-color: var(--scrollbar-track-background);
+  min-height: 95vh;
+  min-width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--bodytext);
+}
+#skillsCard{
+  background-color: var(--skillsBackground);
+  min-height: 100vh;
+  min-width: 100vw;
+  left: 0;
+  top: 95vh;
+  color: var(--bodytext);
+  position: absolute;
+}
 /* Main div ID */
 #mainContainer {
   font-family: 'Exo';
