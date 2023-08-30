@@ -6,7 +6,7 @@ export default {
             languages: [{ name: 'C#' }, { name: 'Python' }, { name: 'C++' }, { name: 'Java' }, { name: 'SQL' }, { name: 'JavaScript' }, { name: 'Haskell' }, { name: 'Verilog' }, { name: 'C' }, { name: 'Assembly' }, { name: 'Ruby' }],
             frameworks: [{ name: 'Vue.js' }, { name: 'HTML' }, { name: 'CSS' }, { name: 'Node.js' }, { name: 'Linux' }, { name: 'Github' }, { name: 'LaTex' }, { name: '.NET' }, { name: 'Subversion' }],
             devTools: [{ name: 'Visual Studio Tools for Office' }, { name: 'Microsoft Visual Studio' }, { name: 'VSCode' }, { name: 'Jetbrains Products' }, { name: 'Microsoft O365 Suite' }, { name: 'SPICE Software' }, { name: 'Microsoft SQL Server Management Studio' }, { name: 'Google Cloud Platform' }],
-            project: [{ name: 'Timeline', desc: 'Web project to show a history of my work experience and classwork.',route:'/timeline',index:0 },{name: 'Example Project', desc: 'This is a test project',route:'/notreal',index:1 },{name: 'Example Project 2', desc: 'This is to test if stacking works',route:'/notreal',index:2 }],
+            project: [{ name: 'Timeline', desc: 'Web project to show a history of my work experience and classwork.', route: '/timeline', index: 0 }, { name: 'Example Project', desc: 'This is a test project', route: '/notreal', index: 1 }, { name: 'Example Project 2', desc: 'This is to test if stacking works', route: '/notreal', index: 2 }],
         }
     },
     created() {
@@ -66,8 +66,8 @@ export default {
                 }
             }
         },
-        route(index){
-            this.$router.push({ path: this.project[index].route})
+        route(index) {
+            this.$router.push({ path: this.project[index].route })
         }
     },
 }
@@ -164,17 +164,24 @@ export default {
                         </div>
                     </div>
                 </div>
-                    <v-sheet id="projects">
+                <v-sheet id="projects">
                     <div style="margin-top: 10vh; display: flex; flex-wrap: wrap; max-width: 100vw;">
-                    <v-card v-for="x in this.project" class="projectCard" :title="x.name" :text="x.desc">
-                        <v-card-actions>
-                            <v-btn v-on:click="route(x.index)">View Project</v-btn>
-                        </v-card-actions>
-                    </v-card>
+                        <v-card v-for="x in this.project" class="projectCard" :title="x.name" :text="x.desc">
+                            <v-card-actions>
+                                <v-btn v-on:click="route(x.index)">View Project</v-btn>
+                            </v-card-actions>
+                        </v-card>
                     </div>
                 </v-sheet>
                 <v-sheet id="footer">
-                    stuff
+                    <div style="margin-left: 1.5vw; float:left">
+                        <font><br>Personal website & portfolio by Samuel Nicklaus.<br><br>
+                            Built with VueJS & hosted on Github.com.</font>
+                    </div>
+                    <div style="margin-right: 5vw; float:right">
+                        <font><br><u style="text-decoration-color: #bb86fc;"><a href="https://samnicklez.github.io/ModernResume/#/">samnicklez.github.io/ModernResume</a></u><br><br>
+                            <u style="text-decoration-color: #bb86fc;"><a href="https://github.com/SamNicklez" target=”_blank”>Github</a></u>&emsp;&emsp;<u style="text-decoration-color: #bb86fc;"><a href="https://www.linkedin.com/in/sam-nicklaus/" target=”_blank”>LinkedIn</a></u></font>
+                    </div>
                 </v-sheet>
             </v-sheet>
         </div>
@@ -224,6 +231,17 @@ export default {
     }
 }
 
+::selection {
+  background: #bb86fc; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #bb86fc; /* Gecko Browsers */
+}
+
+a {
+  color: #bb86fc;
+}
+
 /* Imports default font type for webpage */
 @font-face {
     font-style: normal;
@@ -258,9 +276,10 @@ export default {
 }
 
 /* Div for the footer */
-#footer{
-    min-height: 10vh;
+#footer {
+    min-height: 20vh;
     background-color: var(--skillsBackground);
+    color: var(--bodytext);
 }
 
 /* Div for second card below main div */
