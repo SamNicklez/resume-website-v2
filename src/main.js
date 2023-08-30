@@ -8,13 +8,13 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import {createRouter, createWebHistory} from 'vue-router'
+import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from '/src/views/Home.vue'
 import Timeline from '/src/views/Timeline.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes: [{path:'/ModernResume/',component: Home},{path:'/ModernResume/timeline',component: Timeline}]
+  history: createWebHashHistory(),
+  routes: [{path:'/',component: Home},{path:'/timeline',component: Timeline}]
 });
 
 
