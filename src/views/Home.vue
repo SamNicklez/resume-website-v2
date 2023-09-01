@@ -6,7 +6,7 @@ export default {
             languages: [{ name: 'C#' }, { name: 'Python' }, { name: 'C++' }, { name: 'Java' }, { name: 'SQL' }, { name: 'JavaScript' }, { name: 'Haskell' }, { name: 'Verilog' }, { name: 'C' }, { name: 'Assembly' }, { name: 'Ruby' }],
             frameworks: [{ name: 'Vue.js' }, { name: 'HTML' }, { name: 'CSS' }, { name: 'Node.js' }, { name: 'Linux' }, { name: 'Github' }, { name: 'LaTex' }, { name: '.NET' }, { name: 'Subversion' }],
             devTools: [{ name: 'Visual Studio Tools for Office' }, { name: 'Microsoft Visual Studio' }, { name: 'VSCode' }, { name: 'Jetbrains Products' }, { name: 'Microsoft O365 Suite' }, { name: 'SPICE Software' }, { name: 'Microsoft SQL Server Management Studio' }, { name: 'Google Cloud Platform' }],
-            project: [{ name: 'Timeline', desc: 'Web project to show a history of my work experience and classwork.', route: '/timeline', index: 0 }, { name: 'Example Project', desc: 'This is a test project', route: '/notreal', index: 1 }, { name: 'Example Project 2', desc: 'This is to test if stacking works', route: '/notreal', index: 2 }],
+            project: [{ name: 'Timeline', desc: 'Web project to show a history of my work experience and classwork.', route: '/timeline', index: 0 }, { name: '3D Donut', desc: 'Experimental project to learn about 3D web rendering using Three.JS and prompt engineering', route: '/3d', index: 1 }, { name: 'Example Project 2', desc: 'This is to test project to see if stacking works for the cards', route: '/notreal', index: 2 }],
         }
     },
     created() {
@@ -166,7 +166,7 @@ export default {
                 </div>
                 <v-sheet id="projects">
                     <div style="margin-top: 10vh; display: flex; flex-wrap: wrap; max-width: 100vw;">
-                        <v-card v-for="x in this.project" class="projectCard" :title="x.name" :text="x.desc">
+                        <v-card v-for="x in this.project" class="projectCard" :title="x.name" :text="x.desc" width="25vw">
                             <v-card-actions>
                                 <v-btn v-on:click="route(x.index)">View Project</v-btn>
                             </v-card-actions>
@@ -179,8 +179,12 @@ export default {
                             Built with VueJS & hosted on Github.com.</font>
                     </div>
                     <div style="margin-right: 5vw; float:right">
-                        <font><br><u style="text-decoration-color: #bb86fc;"><a href="https://samnicklez.github.io/ModernResume/#/">samnicklez.github.io/ModernResume</a></u><br><br>
-                            <u style="text-decoration-color: #bb86fc;"><a href="https://github.com/SamNicklez" target=”_blank”>Github</a></u>&emsp;&emsp;<u style="text-decoration-color: #bb86fc;"><a href="https://www.linkedin.com/in/sam-nicklaus/" target=”_blank”>LinkedIn</a></u></font>
+                        <font><br><u style="text-decoration-color: #bb86fc;"><a
+                                    href="https://samnicklez.github.io/ModernResume/#/">samnicklez.github.io/ModernResume</a></u><br><br>
+                            <u style="text-decoration-color: #bb86fc;"><a href="https://github.com/SamNicklez"
+                                    target=”_blank”>Github</a></u>&emsp;&emsp;<u style="text-decoration-color: #bb86fc;"><a
+                                    href="https://www.linkedin.com/in/sam-nicklaus/" target=”_blank”>LinkedIn</a></u>
+                        </font>
                     </div>
                 </v-sheet>
             </v-sheet>
@@ -220,26 +224,19 @@ export default {
     --skillsBackground: black;
 }
 
-/* Fade in animation on loading of webpage */
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
+/* Makes highlighting purple */
 ::selection {
-  background: #bb86fc; /* WebKit/Blink Browsers */
+    background: #bb86fc;
+    /* WebKit/Blink Browsers */
 }
+
 ::-moz-selection {
-  background: #bb86fc; /* Gecko Browsers */
+    background: #bb86fc;
+    /* Gecko Browsers */
 }
 
 a {
-  color: #bb86fc;
+    color: #bb86fc;
 }
 
 /* Imports default font type for webpage */
@@ -329,5 +326,4 @@ a {
 /* Sets scrollbar hover color */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover-background);
-}
-</style>
+}</style>

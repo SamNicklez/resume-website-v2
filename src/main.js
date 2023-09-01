@@ -11,10 +11,11 @@ import * as directives from 'vuetify/directives'
 import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from '/src/views/Home.vue'
 import Timeline from '/src/views/Timeline.vue'
+import ThreeD from '/src/views/3d.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [{path:'/',component: Home},{path:'/timeline',component: Timeline}]
+  routes: [{path:'/',component: Home},{path:'/timeline',component: Timeline},{path:'/3d',component: ThreeD}]
 });
 
 

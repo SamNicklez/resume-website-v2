@@ -12,6 +12,7 @@
     "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/js": "^7.2.96",
     "postscribe": "^2.0.8",
+    "three": "^0.156.0",
     "vue": "^3.3.4",
     "vue-router": "^4.0.13",
     "vuetify": "^3.3.12"
