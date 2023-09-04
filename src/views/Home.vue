@@ -191,7 +191,7 @@ export default {
         </div>
     </div>
     <div v-else>
-        Mobile Sucks LOL
+        Mobile version of the website is still in development. Please view on desktop or change your mobile settings to desktop mode.
     </div>
 </template>
 
